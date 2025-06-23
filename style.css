@@ -16,7 +16,7 @@ body {
 .background {
     position: absolute;
     top: 0;
-    left: 0;
+0   left: 0;
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at center, rgba(40, 30, 20, 0.8) 0%, rgba(0, 0, 0, 0.95) 70%);
@@ -43,7 +43,19 @@ body {
     left: 0%;
     width: 100%;
     height: 100%;
-    background: url('images/ring4.webp') no-repeat center center;
+    background: url('images/elden2.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+.background_alt_alt {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: url('images/ring3.webp') no-repeat center center;
     background-size: cover;
     z-index: 1;
     opacity: 0.2;
@@ -262,4 +274,239 @@ p {
     font-family: 'EB Garamond', serif;
     color: #d7c5a0;
     font-size: 1.2rem;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+    background: #000;
+    min-height: 100vh;
+    position: relative;
+    color: #d7c5a0;
+    overflow-y: auto;
+}
+
+
+.glow-effect {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.container {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.inventory-title {
+    font-size: 3rem;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 60px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(45deg, #d7c5a0, #f0e5c3, #d7c5a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.2); }
+}
+
+.inventory-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.inventory-item {
+    display: flex;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.inventory-item:hover {
+    border-color: rgba(212, 175, 55, 0.8);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    transform: translateY(-5px);
+}
+
+.item-image {
+    flex: 0 0 150px;
+    height: 150px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.item-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 40%, rgba(212, 175, 55, 0.1) 50%, transparent 60%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    color: rgba(212, 175, 55, 0.5);
+}
+
+.item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #f0e5c3;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.item-type {
+    font-size: 1rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+}
+
+.item-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #d7c5a0;
+    margin-bottom: 1rem;
+}
+
+.item-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: auto;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(212, 175, 55, 0.7);
+    margin-bottom: 0.2rem;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #d4af37;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.back-button {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 4;
+    padding: 0.8rem 1.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    border-radius: 6px;
+    color: #d7c5a0;
+    text-decoration: none;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.back-button:hover {
+    border-color: #d4af37;
+    color: #f0e5c3;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .inventory-item {
+        flex-direction: column;
+    }
+
+    .item-image {
+        flex: none;
+        width: 100%;
+        height: 200px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .inventory-title {
+        font-size: 2rem;
+    }
+
+    .item-stats {
+        justify-content: center;
+    }
 }
