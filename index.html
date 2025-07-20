@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elden Ring Menu</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>homepage</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/computer-modern@0.3.4/cmu.css" rel="stylesheet" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="glow-effect"></div>
-    <div class="particles" id="particles"></div>
-    <h1 class="title">
-      <span class="title-inner">
-        <span class="large-letter">A</span>LLAN ZHAN<span class="large-letter">G</span>
-      </span>
-    </h1>
-     <p class="subtitle">Math of Comp @UCLA || C/O '28</p>
-    <nav class="menu">
-        <a href="files/about.html" class="menu-item">ABOUT ME</a>
-        <a href="files/work.html" class="menu-item">PAST WORK</a>
-        <a href="files/thought.html" class="menu-item">THOUGHT GARDEN</a>
-        <a href="files/contact.html" class="menu-item">CONTACT ME</a>
-        <a href="files/cv.pdf" class="menu-item">CV</a>
-    </nav>
+  <nav class="menu">
+      <a href="files/about.html" class="menu-item">ABOUT</a>
+      <a href="files/projects.html" class="menu-item">PROJECTS</a>
+      <a href="files/publications.html" class="menu-item">PUBLICATIONS</a>
+      <a href="files/thought.html" class="menu-item">THOUGHT GARDEN</a>
+      <a href="files/nvim.html" class="menu-item">NEOVIM/LINUX</a>
+      <a href="files/cv.pdf" target="_blank" rel="noopener noreferrer" class="menu-item">CV</a>
+  </nav>
+  <div class="container">
+    <h1>Allan Zhang</h1>
 
-    <div class="version">
-            I'm smart enough to know that I'm dumb<br> 
-            - Richard Feynman<br>
+    <div class="profile">
+      <img src="images/allan.png" alt="photo of me" class="profile-pic" />
+      <div class="profile-text">
+        <p class=profile-text> Hi! I'm a sophomore studying computational mathematics at <kinda_strong>UCLA</kinda_strong>. I'm currently working as a research assistant at <a class = "color" href="https://baharanm.github.io/bigml/">BigML</a>, helping out PhD candidates Siddharth Joshi and Dang Nguyen. My research primarily focuses on <kinda_strong>data efficiency</kinda_strong>, where I seek to improve training techniques while working with limited amounts of data.  
+        </p>
+         <p class=profile-text> I'm also super into ricing my Hyprland config (I use arch btw) and Neovim, so reach out if you ever have anything to say! I'm also pretty big on writing, check out my <a class = "color" href="files/thought_garden/post2.html">poetry!</a>
+        </p>
+      </div> 
+    </div> 
+    <p class = "email"> allanzhang@ucla.edu</p>
+    <div class="problem">
+    <p class = topic><strong>News:</strong></p>
+        <ul class = "no-bullets">
+            <li> <b class = "date"> July 19, 2025 </b> This site was born! </li>
+        </ul>
     </div>
-
-    <div class="copyright">
-        LAST UPDATED JUNE 2025 
+    <div class="problem">
+      <p><strong>My favorite quote:</strong> "To live is the rarest thing in the world. Most people exist, that is all." - Oscar Wilde </p>
     </div>
-
-    <script src="script.js"></script>
+    <div class="problem">
+      <p><strong>A fun math problem:</strong> Make 24 from the numbers 8, 8, 3 and 3 only using elementary operations (\(+ \, - \, \div \, \times \))</p>
+    </div>
+  <p.update>Website last updated 07/19/25</p>
+  </div> 
 </body>
 </html>
